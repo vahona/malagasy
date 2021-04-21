@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { storiesOf } from '@storybook/react-native';
 
-import Mycomponent from './Mycomponent';
+import Mycomponent from './Phrasetest';
 
 
 storiesOf('Mycomponent', module)
