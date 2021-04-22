@@ -8,8 +8,7 @@ import PhraseTextArea from './PhraseTextArea';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
-
+    color: '#111827',
   }
 })
 
@@ -26,9 +25,11 @@ storiesOf('Phrasetextarea ', module)
     return (
       <Parent>
         {(state, setState) => (
-          <PhraseTextArea styles={styles.container}
+          <PhraseTextArea
+            multiline={true}
+            styles={styles.container}
             editable={true}
-            placeholder={'roa ambin folo'}
+            placeholder={'enter here'}
             inputValue={state.value}
             onChange={(text) => setState({ value: text })}
           />
@@ -40,7 +41,7 @@ storiesOf('Phrasetextarea ', module)
 
   )
 
-  .add('uneditable', () => <PhraseTextArea styles={styles.container} editable={false} placeholder={'roa ambin folo'} inputValue={'35 words phrases'} />)
+  .add('uneditable', () => <PhraseTextArea styles={styles.container} editable={false} placeholder={'roa ambin folo'} inputValue={"roa ambin'ny folo"} />)
 
 
 

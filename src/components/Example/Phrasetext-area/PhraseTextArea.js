@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     paddingBottom: 41,
     color: '#111827',
     fontSize: 20,
-    lineHeight: 24
+    lineHeight: 24,
+    borderRadius: 3,
 
 
   },
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
 
 })
 
-export default function PhraseTextArea({ editable, placeholder, inputValue, onChange }) {
+export default function PhraseTextArea({ editable, placeholder, inputValue, onChange, multiline }) {
 
   return (
     <SafeAreaView >
@@ -38,6 +39,7 @@ export default function PhraseTextArea({ editable, placeholder, inputValue, onCh
           style={[styles.input]}
           editable={editable}
           onChange={onChange}
+          multiline={multiline}
         />
       </View>
       <Text>
