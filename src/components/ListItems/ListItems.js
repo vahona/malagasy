@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, SafeAreaView, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
+import { View, SafeAreaView, Text, TouchableOpacity, Image, StyleSheet, SectionList, ListItem } from 'react-native'
 
 const styles = StyleSheet.create({
     element: {
@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     topic: {
         marginLeft: 18,
 
-
     },
 
     learn: {
@@ -21,27 +20,33 @@ const styles = StyleSheet.create({
 
 })
 
-export default function ListItem({ display }) {
 
-    // arrowIcon = require('/src/assets/icons/Vectore.svg')
+
+export default function ListItems({ sections, renderItem }) {
+
+    // arrowIcon = require('')
+
+    // ItemSeparatorComponent = { ItemSeparatorComponent }
 
     return (
         <SafeAreaView>
-            <TouchableOpacity>
-                <View style={styles.element}
+            <SectionList
+                sections={sections}
+                renderItem={renderItem}
+            >
 
-                >
+                {/* <View style={styles.element}>
                     <Text style={styles.topic}>
                         All
                     </Text>
                     <Text style={styles.learn}>
                         Learn
                         <Image
-                        // source={arrowIcon}
+                        // source={require('../assets/icons/Vectore.svg')}
                         />
                     </Text>
-                </View>
-            </TouchableOpacity>
+                </View> */}
+            </SectionList>
         </SafeAreaView>
     )
 }
