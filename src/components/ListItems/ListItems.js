@@ -20,33 +20,43 @@ const styles = StyleSheet.create({
 
 })
 
+const Datas = [
+
+    {
+        title: "",
+        data: ["All", "Food", "Greetings", "At the restaurant", "Unecessaraly loong cat", "Single words", "At the market"]
+    },
+]
 
 
-export default function ListItems({ sections, renderItem }) {
+const Item = ({ title }) => (
+    <View>
+        <Text>{title}</Text>
+    </View>
+);
+
+
+export default function ListItems() {
 
     // arrowIcon = require('')
 
-    // ItemSeparatorComponent = { ItemSeparatorComponent }
 
     return (
         <SafeAreaView>
             <SectionList
-                sections={sections}
-                renderItem={renderItem}
-            >
+                sections={Datas}
+                keyExtractor={(item, index) => item + index}
+                renderItem={({ item }) => <Item title={item} />}
 
-                {/* <View style={styles.element}>
-                    <Text style={styles.topic}>
-                        All
-                    </Text>
-                    <Text style={styles.learn}>
-                        Learn
-                        <Image
-                        // source={require('../assets/icons/Vectore.svg')}
-                        />
-                    </Text>
-                </View> */}
+                renderSectionHeader={({ section: { title } }) => (
+                    <Text style={styles.header}>{title}</Text>
+                )}
+            >
             </SectionList>
         </SafeAreaView>
     )
 }
+
+
+
+
