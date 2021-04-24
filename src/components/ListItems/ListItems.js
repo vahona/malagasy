@@ -5,20 +5,56 @@ const styles = StyleSheet.create({
     element: {
         backgroundColor: '#fff',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        paddingBottom: 16,
+        paddingTop: 16,
+        justifyContent: 'space-between',
+
+
+
     },
 
     topic: {
         marginLeft: 18,
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: 16,
+        lineHeight: 19,
+        color: '#111827'
 
     },
 
     learn: {
-        marginRight: 20
+        marginRight: 10,
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        fontSize: 16,
+        lineHeight: 19,
+        textAlign: 'right',
+        color: '#06B6D4',
+
+    },
+
+    separator: {
+        flex: 1,
+        height: 1,
+        backgroundColor: 'rgba(0,0,0,0.2)'
+    },
+
+    arrow: {
+        height: 20,
+        marginRight: 10,
+
+    },
+
+    learnlink: {
+        flexDirection: 'row',
     }
 
-
 })
+
+const Separator = () => <View style={styles.separator} />
 
 const Datas = [
 
@@ -28,10 +64,24 @@ const Datas = [
     },
 ]
 
+const IconArrow = require('../ImageIcon/Vector.png')
+
 
 const Item = ({ title }) => (
-    <View>
-        <Text>{title}</Text>
+    <View style={styles.element}>
+        <Text style={styles.topic}>{title}</Text>
+        <View>
+            <TouchableOpacity style={styles.learnlink}>
+                <Text style={styles.learn}> learn </Text>
+
+                <Image
+
+                    style={styles.arrow}
+                    source={IconArrow}
+                />
+            </TouchableOpacity >
+        </View>
+
     </View>
 );
 
@@ -42,16 +92,15 @@ export default function ListItems() {
 
 
     return (
-        <SafeAreaView>
+        <SafeAreaView >
             <SectionList
+
                 sections={Datas}
                 keyExtractor={(item, index) => item + index}
-                renderItem={({ item }) => <Item title={item} />}
-
-                renderSectionHeader={({ section: { title } }) => (
-                    <Text style={styles.header}>{title}</Text>
-                )}
+                renderItem={({ item }) => <Item style={styles.element} title={item} />}
+                ItemSeparatorComponent={() => <Separator></Separator>}
             >
+
             </SectionList>
         </SafeAreaView>
     )
