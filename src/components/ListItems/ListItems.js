@@ -82,7 +82,7 @@ const Item = ({ title, onPress }) => (
             <TouchableOpacity style={styles.learnlink}  >
                 <Text style={styles.learn} > learn </Text>
 
-                <Vector style={styles.icon} height={16} width={16} fill='#000' />
+                <Vector style={styles.icon} height={16} width={16} />
             </TouchableOpacity >
         </View>
 
