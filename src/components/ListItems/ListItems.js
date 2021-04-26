@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { View, SafeAreaView, Text, TouchableOpacity, Image, StyleSheet, SectionList, ListItem, Button } from 'react-native'
 
+import Vector from '../ImageIcon/Vector.svg'
+
 const styles = StyleSheet.create({
     element: {
         backgroundColor: '#fff',
@@ -54,6 +56,10 @@ const styles = StyleSheet.create({
 
     learnlink: {
         flexDirection: 'row',
+    },
+
+    icon: {
+        marginTop: 2
     }
 
 })
@@ -68,9 +74,6 @@ const Datas = [
     },
 ]
 
-const IconArrow = require('../ImageIcon/Vector.png')
-
-
 
 const Item = ({ title, onPress }) => (
     <View style={styles.element} onPress={onPress}>
@@ -79,11 +82,7 @@ const Item = ({ title, onPress }) => (
             <TouchableOpacity style={styles.learnlink}  >
                 <Text style={styles.learn} > learn </Text>
 
-                <Image
-
-                    style={styles.arrow}
-                    source={IconArrow}
-                />
+                <Vector style={styles.icon} height={16} width={16} />
             </TouchableOpacity >
         </View>
 
