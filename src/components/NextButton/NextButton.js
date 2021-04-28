@@ -41,6 +41,7 @@ function returnNull() {
 export default function NextButton({ onPress, children, disable = true }) {
     return <TouchableHighlight
         onPress={disable ? returnNull : NextAdd}
+        underlayColor="rgba(176,224,230, 0.25)"
         style={disable ? styles.disabled : styles.able}
     >{children}</TouchableHighlight>;
 }
