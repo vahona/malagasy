@@ -17,7 +17,7 @@ storiesOf('SectionHeader', module)
     ))
     .add('Home', () => (
         <SectionHeader>
-            <ToolButton />
+            {/* <ToolButton /> */}
         </SectionHeader>
     ))
     .add('Learning', () => (
