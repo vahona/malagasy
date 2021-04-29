@@ -12,22 +12,20 @@ import Whiteticked from '../ImageIcon/Whiteticked.svg'
 
 
 
-
-
 storiesOf('ToolButton', module)
     .addDecorator((getStory) => <View>{getStory()}</View>)
     .add('Croi', () => (
-        <ToolButton >
+        <ToolButton  >
             <Croi width={14} height={14} />
         </ToolButton>
     ))
     .add('Ticked', () => (
-        <ToolButton >
+        <ToolButton  >
             <Whiteticked width={17.6} height={13.5} />
         </ToolButton>
     ))
     .add('DoubleTicked', () => (
-        <ToolButton >
+        <ToolButton  >
             <Doubleticked width={23.25} height={13.41} />
         </ToolButton>
     ))
@@ -37,7 +35,9 @@ storiesOf('ToolButton', module)
         </ToolButton>
     ))
     .add('Home', () => (
-        <ToolButton  >
+        <ToolButton>
             <Home width={22.62} height={22.62} />
         </ToolButton>
     ))
+
+
