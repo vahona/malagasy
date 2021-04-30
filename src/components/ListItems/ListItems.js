@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { View, SafeAreaView, Text, TouchableOpacity, Image, StyleSheet, SectionList, ListItem, Button } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
 import Vector from '../ImageIcon/Vector.svg'
+import Categories from '../../data/categories.json'
 
 const styles = StyleSheet.create({
     element: {
@@ -9,6 +10,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingBottom: 16,
         paddingTop: 16,
+        marginTop: 16,
+        marginLeft: 16,
+        marginLeft: 16,
         justifyContent: 'space-between',
 
     },
@@ -19,16 +23,6 @@ const styles = StyleSheet.create({
         marginEnd: 16
     },
 
-    topic: {
-        marginLeft: 18,
-        fontFamily: 'Inter',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: 16,
-        lineHeight: 19,
-        color: '#111827'
-
-    },
 
     learn: {
         marginRight: 10,
@@ -59,51 +53,33 @@ const styles = StyleSheet.create({
     },
 
     icon: {
-        marginTop: 2
-    }
+        marginTop: 2,
+        marginRight: 16
+    },
+
+
 
 })
 
-const Separator = () => <View style={styles.separator} />
 
-const Datas = [
-
-    {
-        title: "",
-        data: ["All", "Food", "Greetings", "At the restaurant", "Unecessaraly loong cat", "Single words", "At the market"]
-    },
-]
+const functionToOpenNewPage = () => {
+    return alert("Topic Detail")
+}
 
 
-const Item = ({ title, onPress }) => (
-    <View style={styles.element} onPress={onPress}>
-        <Text style={styles.topic}>{title}</Text>
-        <View>
-            <TouchableOpacity style={styles.learnlink}  >
-                <Text style={styles.learn} > learn </Text>
-
-                <Vector style={styles.icon} height={16} width={16} />
-            </TouchableOpacity >
-        </View>
-
-    </View>
-);
-
-
-export default function ListItems() {
+export default function ListItems({ children }) {
 
     return (
-        <SafeAreaView >
-            <SectionList
-                style={styles.container}
-                sections={Datas}
-                keyExtractor={(item, index) => item + index}
-                renderItem={({ item }) => <Item style={styles.element} title={item} />}
-                ItemSeparatorComponent={() => <Separator></Separator>}
-            >
 
-            </SectionList>
-        </SafeAreaView>
+        <TouchableOpacity style={styles.element} onPress={functionToOpenNewPage}>
+            {children}
+            <View>
+                <TouchableOpacity style={styles.learnlink}  >
+                    <Text style={styles.learn} > learn </Text>
+                    <Vector style={styles.icon} height={16} width={16} />
+                </TouchableOpacity >
+            </View>
+        </TouchableOpacity >
     )
 }
 
