@@ -31,6 +31,24 @@ const styles = StyleSheet.create({
         marginLeft: 5.93
     },
 
+    title: {
+        color: 'rgba(6, 182, 212, 1)',
+        fontWeight: '600',
+        fontSize: 30,
+        lineHeight: 36,
+        marginTop: 14,
+        marginLeft: 22
+
+    },
+
+    smallContainer: {
+        backgroundColor: '#FFFFFF',
+        width: 411,
+        height: 61,
+        marginTop: 32,
+        marginLeft: 32
+    }
+
 
 })
 
@@ -39,7 +57,9 @@ storiesOf('SectionHeader', module)
     .addDecorator(getStory => <View>{getStory()}</View>)
     .add('Title', () => (
         <SectionHeader>
-            <Text> Learn Malagasy </Text>
+            <View style={styles.smallContainer}>
+                <Text style={styles.title}> Learn Malagasy </Text>
+            </View>
         </SectionHeader>
     ))
     .add('Home', () => (
@@ -49,8 +69,8 @@ storiesOf('SectionHeader', module)
             </ToolButton>
             <LanguageSwitcherButton>
                 <Text style={styles.english}>EN</Text>
-                <Text style={styles.malagasy}>MA</Text>
                 <SwitchIcon />
+                <Text style={styles.malagasy}>MA</Text>
             </LanguageSwitcherButton >
             <ToolButton>
                 <Whiteticked />
@@ -64,5 +84,17 @@ storiesOf('SectionHeader', module)
         </SectionHeader>
     ))
     .add('Learning', () => (
-        <SectionHeader></SectionHeader>
+        <SectionHeader>
+            <ToolButton>
+                <Inferieur />
+            </ToolButton>
+            <LanguageSwitcherButton>
+                <Text style={styles.english}>EN</Text>
+                <SwitchIcon />
+                <Text style={styles.malagasy}>MA</Text>
+            </LanguageSwitcherButton >
+            <ToolButton>
+                <Home />
+            </ToolButton>
+        </SectionHeader>
     ))
