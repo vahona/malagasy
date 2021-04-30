@@ -12,7 +12,9 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: 'rgba(6, 182, 212, 1)',
         borderRadius: 100,
-        margin: 32
+        marginTop: 35,
+        marginLeft: 10,
+        marginRight: 10
     }
 });
 
