@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: 'rgba(6, 182, 212, 1)',
         borderRadius: 30,
-        margin: 16,
+        marginTop: 35,
         color: 'rgba(255, 255, 255, 1)',
         flexDirection: 'row'
 
