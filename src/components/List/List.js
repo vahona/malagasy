@@ -3,7 +3,8 @@ import {
     View,
     Text,
     StyleSheet,
-    FlatList
+    FlatList,
+    SectionList
 } from 'react-native'
 
 import ListItems from '../ListItems/ListItems'
@@ -11,37 +12,36 @@ import Categorie from '../../data/categories.json'
 
 console.log(Categorie);
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    liststyle: {
+        marginLeft: 16
+    }
+})
 
 const Data = Categorie
-
-// const Categorie = require('../../data/categories.json')
 
 const Separator = () => <View style={styles.separator} />
 
 
+
 export default function Lists() {
     return Data.categories.map((item) => {
+        console.log(item.name.en);
         return (
-            <ListItems key={item.id}>
-                <FlatList
-                    data={Data}
-                    renderItem={({ item }) => <Text>{item.en}</Text>}>
-
-                </FlatList>
-
-                {/* <Text> {item.mg}</Text> */}
-                {/* <SectionList ItemSeparatorComponent={() => <Separator></Separator>}>
-                    {item.mg}
-                </SectionList> */}
-
-                {/* <Text>{item.mg}</Text> */}
-
+            <ListItems key={item.id} sections={Data}>
+                <Text style={styles.liststyle}>{item.name.en}</Text>
             </ListItems>
         )
     })
 
 }
+
+
+
+
+
+
+
 
 
 
