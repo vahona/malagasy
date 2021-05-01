@@ -15,7 +15,13 @@ console.log(Categorie);
 const styles = StyleSheet.create({
     liststyle: {
         marginLeft: 16
+    },
+
+    container: {
+        marginTop: 0
     }
+
+
 })
 
 const Data = Categorie
@@ -28,7 +34,11 @@ export default function Lists() {
     return Data.categories.map((item) => {
         console.log(item.name.en);
         return (
-            <ListItems key={item.id} sections={Data}>
+            <ListItems
+                style={styles.container}
+                key={item.id}
+                sections={Data}
+                ItemSeparatorComponent={() => <Separator></Separator>}>
                 <Text style={styles.liststyle}>{item.name.en}</Text>
             </ListItems>
         )
