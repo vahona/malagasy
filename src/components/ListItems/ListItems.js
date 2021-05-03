@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, ListItem } from 'react-native'
 
 import Vector from '../ImageIcon/Vector.svg'
 import Categories from '../../data/categories.json'
@@ -9,8 +9,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection: 'row',
         paddingBottom: 16,
-        paddingTop: 16,
-        marginTop: 16,
         marginLeft: 16,
         marginLeft: 16,
         justifyContent: 'space-between',
@@ -67,6 +65,7 @@ const functionToOpenNewPage = () => {
 }
 
 
+
 export default function ListItems({ children }) {
 
     return (
@@ -74,7 +73,7 @@ export default function ListItems({ children }) {
         <TouchableOpacity style={styles.element} onPress={functionToOpenNewPage}>
             {children}
             <View>
-                <TouchableOpacity style={styles.learnlink}  >
+                <TouchableOpacity style={styles.learnlink} >
                     <Text style={styles.learn} > learn </Text>
                     <Vector style={styles.icon} height={16} width={16} />
                 </TouchableOpacity >
