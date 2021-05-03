@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         fontSize: 16,
         lineHeight: 19,
-        color: '#111827'
+        color: '#111827',
+        marginTop: 16
 
     }
 })
