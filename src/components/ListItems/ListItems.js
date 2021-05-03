@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
 
     learnlink: {
         flexDirection: 'row',
+        marginTop: 16
     },
 
     icon: {
