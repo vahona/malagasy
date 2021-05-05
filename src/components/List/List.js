@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     View,
     Text,
@@ -11,7 +11,6 @@ import { Divider } from 'react-native-paper'
 import ListItems from '../ListItems/ListItems'
 import Categorie from '../../data/categories.json'
 
-console.log(Categorie);
 
 const styles = StyleSheet.create({
     liststyle: {
@@ -46,18 +45,24 @@ const Separator = () => <View style={styles.separator} />
 
 
 
-export default function Lists() {
-    return Data.categories.map((item) => {
-        console.log(item.name.en);
+export default function Lists(props) {
+    const [topic, setTopic] = useState(Data)
+
+    useEffect(() => {
+        setTopic(Data)
+    }, []);
+
+    return topic.categories.map((item) => {
+        // const detail = Data.find((id) => item.id === id)
+        // console.log(detail);
         return (
-            <TouchableOpacity>
+            <TouchableOpacity >
                 <ListItems
                     style={styles.container}
                     key={item.id}
                     sections={Data}
                     ItemSeparatorComponent={() => <Separator></Separator>}>
                     <Text style={styles.liststyle}>{item.name.en}</Text>
-
                 </ListItems>
                 <Divider style={{ marginLeft: 16 }} />
             </TouchableOpacity>

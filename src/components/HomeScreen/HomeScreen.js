@@ -1,5 +1,5 @@
-// components/Task.js
-import * as React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Text, SafeAreaView, StyleSheet, ScrollView, View } from 'react-native';
 import SectionHeader from '../SectionHeader/SectionHeader'
 import ToolButton from '../ToolButton/ToolButton'
@@ -70,6 +70,11 @@ const styles = StyleSheet.create({
 
 export default function HomeScreen() {
 
+    const [world, setWorld] = useState(-1)
+
+    useEffect(() => {
+        setWorld(world + 1)
+    }, []);
 
     return (
         <SafeAreaView >
@@ -104,11 +109,11 @@ export default function HomeScreen() {
             <ScrollView>
                 <Text style={styles.numberofword}>Seen phrases</Text>
                 <View style={styles.containerword}>
-                    <ListItems><Text style={styles.text}>Words and phrases</Text></ListItems>
+                    <ListItems><Text style={styles.text}> {world} Words and phrases</Text></ListItems>
                 </View>
                 <Text style={styles.numberofword}>Learnt Phrases</Text>
                 <View style={styles.containerword}>
-                    <ListItems><Text style={styles.text}>Words and phrases</Text></ListItems>
+                    <ListItems><Text style={styles.text}> {world} Words and phrases</Text></ListItems>
                 </View>
             </ScrollView>
         </SafeAreaView>
