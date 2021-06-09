@@ -16,7 +16,7 @@ import List from '../List/List'
 import ListItems from '../ListItems/ListItems'
 
 const styles = StyleSheet.create({
-
+// When using components without children, you will save a lot of styles and JSX here, which allows you to focus more on logic
     english: {
         color: 'rgba(255, 255, 255, 1)',
         marginRight: 5.93
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         lineHeight: 21.78
     },
 
-    numberofword: {
+    numberOfWord: {
         marginLeft: 23,
         fontWeight: "600",
         fontSize: 18,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 
 export default function HomeScreen() {
 
-    const [world, setWorld] = useState(-1)
+    const [world, setWorld] = useState(-1) // What is this for? why world?
 
     useEffect(() => {
         setWorld(world + 1)
@@ -107,11 +107,11 @@ export default function HomeScreen() {
                 </ScrollView>
             </View>
             <ScrollView>
-                <Text style={styles.numberofword}>Seen phrases</Text>
+                <Text style={styles.numberOfWord}>Seen phrases</Text>
                 <View style={styles.containerword}>
                     <ListItems><Text style={styles.text}> {world} Words and phrases</Text></ListItems>
                 </View>
-                <Text style={styles.numberofword}>Learnt Phrases</Text>
+                <Text style={styles.numberOfWord}>Learnt Phrases</Text>
                 <View style={styles.containerword}>
                     <ListItems><Text style={styles.text}> {world} Words and phrases</Text></ListItems>
                 </View>

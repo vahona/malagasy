@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     }
 });
 
-function Switchalert() {
-    return alert("swicht the langue")
+function Switchalert() { // See action button about onPress prop and use of children
+    return alert("switched the langue")
 }
 
 export default function LanguageSwitcherButton({ children }) {

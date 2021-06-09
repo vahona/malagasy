@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
 });
 
-
+// This is a good example of how to use react components without using children.
 export default function PhraseTextarea({
   phrase,
   editable,

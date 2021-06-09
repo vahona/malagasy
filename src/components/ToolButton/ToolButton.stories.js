@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import ToolButton from './ToolButton';
 
-import Croi from '../ImageIcon/Croi.svg'
+import Croi from '../ImageIcon/Croi.svg' // Instead of the name of the svg in French, use a name that describes what it is for. 
 import Doubleticked from '../ImageIcon/Doubleticked'
 import Home from '../ImageIcon/Home.svg'
 import Inferieur from '../ImageIcon/Inferieur.svg'

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
     },
 
-    able: {
+    able: { // while applicable in other contexts (and quite funny here), here, the opposite of disbaled is enabled
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(6, 182, 212, 1)',
@@ -34,13 +34,13 @@ function NextAdd() {
     return alert('next')
 }
 
-function returnNull() {
+function returnNull() { // you can replace this with a simple empty arrow function: () => null
     return null
 }
 
-export default function NextButton({ onPress, children, disable = true }) {
+export default function NextButton({ onPress = () => null, children, disable = true }) {
     return <TouchableHighlight
-        onPress={disable ? returnNull : NextAdd}
+        onPress={disable ? () => null : NextAdd /* instead of this, give onPress an empty arrow function as a default parameter and then always use onPress: // onPress={onPress} */}
         underlayColor="rgba(176,224,230, 0.25)"
         style={disable ? styles.disabled : styles.able}
     >{children}</TouchableHighlight>;

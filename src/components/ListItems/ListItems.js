@@ -65,9 +65,9 @@ const functionToOpenNewPage = () => {
     return alert("Topic Detail")
 }
 
+// Should be singular as we return only one list item at a time 
 
-
-export default function ListItems({ children }) {
+export default function ListItems({ children }) { // onPress and the current text of the action button should be props, as they are subject to change. Also, we built the action button so it can be reused here. 
 
     return (
 
@@ -75,7 +75,7 @@ export default function ListItems({ children }) {
             {children}
             <View>
                 <TouchableOpacity style={styles.learnlink} >
-                    <Text style={styles.learn} > learn </Text>
+                    <Text style={styles.learn} > Learn </Text>
                     <Vector style={styles.icon} height={16} width={16} />
                 </TouchableOpacity >
             </View>

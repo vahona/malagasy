@@ -20,8 +20,7 @@ const styles = StyleSheet.create({
 
 
 
-
-function Toolalert() {
+function Toolalert() { // onPress should be a prop
     return alert("what's going next")
 }
 

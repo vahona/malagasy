@@ -23,7 +23,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import HomeScreen from './src/components/HomeScreen/HomeScreen'
-
+// remove the react native example code
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (

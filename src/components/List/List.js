@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import { Divider } from 'react-native-paper'
 import ListItems from '../ListItems/ListItems'
-import Categorie from '../../data/categories.json'
+import Category from '../../data/categories.json'
 
 
 const styles = StyleSheet.create({
@@ -39,22 +39,22 @@ const styles = StyleSheet.create({
 
 })
 
-const Data = Categorie
+const Data = Category
 
 const Separator = () => <View style={styles.separator} />
 
 
 
-export default function Lists(props) {
+export default function Lists(props) { // This function should get its data as a prop instead of importing it because it will be used for other cases than just categories as well.
     const [topic, setTopic] = useState(Data)
 
     useEffect(() => {
-        setTopic(Data)
+        setTopic(Data) // You already set Data as the default, so this is not necessary.
     }, []);
 
     return topic.categories.map((item) => {
         // const detail = Data.find((id) => item.id === id)
-        // console.log(detail);
+        // console.log(detail); remove this
         return (
             <TouchableOpacity >
                 <ListItems
